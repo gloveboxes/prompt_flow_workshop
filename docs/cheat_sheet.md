@@ -38,7 +38,7 @@ Azure Prompt Flow simplifies the process of prototyping, experimenting, and depl
 
 ## Step 2B: Add a new tool
 
-1. Select <kbd>win or cmd + n</kbd> to create a new tool.
+1. Select <kbd>ctrl or cmd + n</kbd> to create a new tool.
 1. Select the **embedding** tool.
 1. Set the **connection** to `aoai-connection`.
 1. Set the **deployment_name** to `text-embedding-ada-002`.
