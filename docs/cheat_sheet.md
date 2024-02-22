@@ -2,12 +2,15 @@
 
 ## Slides
 
-The PowerPoint slides with speaker notes are available [here](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fgloveboxes%2Fprompt_flow_demo_docs%2Fmain%2Fdocs%2Fresources%2FBuild%2520your%2520RAG%2520Application%2520with%2520Prompt%2520flow%2520in%2520Azure%2520AI%2520Studio%2520-%2520dglover.pptx)
+The PowerPoint slides with speaker notes are available for download
+
+1. [English](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fgloveboxes%2Fprompt_flow_demo_docs%2Fmain%2Fdocs%2Fresources%2FBuild%2520your%2520RAG%2520Application%2520with%2520Prompt%2520flow%2520in%2520Azure%2520AI%2520Studio%2520-%2520dglover.pptx)
+1. [Japanese](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fgloveboxes%2Fprompt_flow_demo_docs%2Fmain%2Fdocs%2Fresources%2FBRK408JP_jp-BRK408AU_Build your RAG Application with Prompt flow in Azure AI Studio - dglover.pptx)
 
 ## Actions
 
 1. Deploy the Azure Resources.
-1. Open Azure portal Webpage on Cosmos DB and Azure AI Search.
+1. Open Azure portal Webpage on Cosmos DB, Azure AI Search Azure AI Studio.
 1. Deploy the Prompt Flow endpoint in ai.azure.com.
 
 ## High level
@@ -272,10 +275,21 @@ nodes:
 
 ## Step 7: Prompt evaluations
 
-1. Run and discuss the Prompt evaluations.
+Run and discuss the Prompt evaluations. The evaluations uses GPT -4 to evaluate the performance of the gpt-35-turbo model. At the moment, gpt-4 atm, is slower and more expensive that gpt-35-turbo, but it makes a good evaluation model.
+
+1. Open the **evaluate-chat-local.ipynb** from the **eval** folder.
+1. Run the notebook.
+1. Discuss calling two flows.
+1. Discuss the results:
+    1. The **flow.dag.yaml** flow in the **contoso-chat** folder.
+    1. The **flow.dag.yaml** flow in the **groundedness** folder.
 
 ## Step 8: Testing and deployment
 
 1. Run local
 1. Discuss deployment options
 1. Test the deployed endpoint
+
+## Few shot example in the repo
+
+For a great example of using few shot learning to understand customer intent, see the **contoso-intent** folder in the repo.
