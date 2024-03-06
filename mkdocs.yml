@@ -2,7 +2,7 @@ site_name: MS AI Tour - Introduction to Prompt Flow and RAG
 
 nav:
   - Introduction: index.md
-  - Azure AI Resources: azure_ai.md
+  - AI Resources: azure_ai.md
   - Workshop: workshop.md
   - Deployment: deployment.md
   - Demo cheat sheet: cheat_sheet.md
