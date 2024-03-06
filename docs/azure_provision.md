@@ -1,4 +1,4 @@
-# Provision Azure workshop resources
+# Deploying your own Azure AI resources
 
 ## Requirements
 
