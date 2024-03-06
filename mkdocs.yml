@@ -1,8 +1,9 @@
 site_name: MS AI Tour - Introduction to Prompt Flow and RAG
 
 nav:
-  - English: index.md
-  # - Japanese: index.jp.md
+  - Introduction: index.md
+  - Workshop: workshop.md
+  - Deployment: deployment.md
   - Demo cheat sheet: cheat_sheet.md
 
 plugins:
