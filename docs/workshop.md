@@ -1,13 +1,6 @@
 # Workshop
 
-## Step 1: Create connections
-
-In this step you'll learn how to create connections to Azure AI Services, Azure AI Search, and Cosmos DB.
-
-1. Ensure you have the **contoso-chat** repo open in VS Code.
-1. Run the `data/create-connections.ipynb` Jupyter Notebook.
-
-## Step 2: Create your first Prompt Flow
+## Step 1: Create your first Prompt Flow
 
 In this section you'll learn the basics of Prompt Flow with VS Code.
 
@@ -50,7 +43,7 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
 
 1. Switch back to the `flow.dag.yaml` file.
 
-## Step 3: Retrieve, the R in RAG
+## Step 2: Retrieve, the R in RAG
 
 In this step there will be two retrievals that will be used to ground the LLM prompt with product information and customer order history.
 
@@ -158,7 +151,7 @@ Follow these steps to retrieve the product and customer information:
 
     ![](./media/debug-tool.png)
 
-## Step 4: Augmentation, the A in RAG
+## Step 3: Augmentation, the A in RAG
 
 In this step you'll learn how to augment the LLM prompt with product and customer information to create a prompt that is grounded with context.
 
@@ -248,7 +241,7 @@ Prompt Flow uses [Jinja2](https://pypi.org/project/Jinja2/) a templating languag
 
 1. When the execution has completed, select the **outputs** tool and **open in new tab** to review the output from the Jinja template.
 
-## Step 5: Generation, the G in RAG
+## Step 4: Generation, the G in RAG
 
 In this step you'll learn how to generate a response from the LLM.
 
@@ -342,7 +335,7 @@ Next, the prompt that was generated in the previous step will be passed to the L
 
     ![](./media/end-2-end-response.png)
 
-## Step 6: Prompt evaluations
+## Step 5: Prompt evaluations
 
 In this step you'll learn how to evaluate the effectiveness of the chat. The evaluation is done by running the chat against the original contoso-chat prompt flow and using the GPT-4 model to evaluate the chat and score how well it performs. There are a number of use cases for evals, including CI/CD, A/B testing, and model selection.
 
@@ -351,7 +344,7 @@ In this step you'll learn how to evaluate the effectiveness of the chat. The eva
     - A groundedness metric is calculated and returned.
 1. Note this demo runs against the original contoso-chat prompt flow, not the one we just built.
 
-## Step 7: Testing and deployment
+## Step 6: Testing and deployment
 
 ### Local testing
 

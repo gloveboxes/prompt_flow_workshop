@@ -1,5 +1,15 @@
 # Deploying your own Azure AI resources
 
+You are following these instruction as you are provisioning your own Azure AI resources to run the workshop.
+
+You will perform the following steps:
+
+1. Provision the Azure resources required for the workshop.
+1. Set up the workshop environment on your own computer or with GitHub Codespaces.
+1. Load grounding data.
+1. Configure the Prompt Flow connections.
+1. Proceed to the workshop.
+
 ## Requirements
 
 You require an Azure Subscription. If you don't have an Azure subscriptions, you can create a [free subscription](https://azure.microsoft.com/en-us/free/free-account-faq).
@@ -12,7 +22,75 @@ In this section you'll set up the Azure resources required for the workshop.
 1. From the VS Code Dev Container or the virtual Python environment, run the `./provision.sh` script.
 1. After the provisioning script completes, follow the instructions raised in this [issue](https://github.com/Azure-Samples/contoso-chat/issues/52).
 
-## Step 2: Load grounding data
+## Step 2: Set up the workshop environment
+
+You can run the workshop on your own computer or with GitHub Codespaces.
+
+### Run the workshop on your own computer
+
+To run the workshop on your own computer, complete the following steps:
+
+1. Install the following:
+    - On Windows install [Python](https://www.python.org/downloads/), skip for macOS and Linux as Python is pre-installed.
+    - [Visual Studio Code](https://code.visualstudio.com/)
+    - [Python VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+
+1. From the command line, navigate to your preferred folder for the workshop.
+1. Clone the Contoso Chat Proxy repository from GitHub:
+
+    ```shell
+    git clone https://github.com/gloveboxes/contoso-chat-proxy.git
+    ```
+
+1. Navigate to the `contoso-chat-proxy` folder.
+1. Create a Python virtual environment:
+
+    ```shell
+    python -m venv .venv
+    ```
+
+1. Activate the virtual environment:
+
+    On Windows:
+
+    ```shell
+    .venv/Scripts/activate
+    ```
+
+    On macOS and Linux:
+
+    ```shell
+    source .venv/bin/activate
+    ```
+
+1. Install the required Python packages:
+
+    ```shell
+    pip install -r requirements.txt
+    ```
+
+1. Open the `contoso-chat-proxy` folder in Visual Studio Code.
+
+    ```shell
+    code .
+    ```
+
+### Run the workshop with GitHub Codespaces
+
+To run the workshop with GitHub Codespaces, complete the following steps:
+
+1. Fork the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy) repository to your GitHub account.
+
+    ![](media/repo_fork.png)
+
+1. Open the forked repository in GitHub Codespaces. In the forked repository, select `Code`, then the `Codespaces` tab, and then select `Create codespace on main`. The GitHub Codespaces environment will be created for you. It will take approximately 5 minutes to create the environment.
+
+    <!-- ![](media/codespaces_open.png) -->
+
+    !!! warning
+        Be sure to stop the Codespace when you are done to avoid incurring charges.
+
+## Step 3: Load grounding data
 
 The solutions uses two data sources to ground the LLM prompt. The first is an Azure AI Search index that contains product information. The second is a Cosmos DB database that contains customer information.
 
@@ -53,3 +131,15 @@ In this step you'll learn how to load customer data into [Cosmos DB](https://doc
 
         ![](./media/cosmos-explore-data.png)
 
+## Step 4: Configure the Prompt Flow connections
+
+1. Update the `.env.sample` file with the Azure AI Search and Cosmos DB connection strings.
+1. Configure the Prompt Flow connections:
+    - Open the `connections` folder and open the `create-connections.ipynb` notebook.
+    - You will be prompted to install the Jupyter extension, select **Install**.
+    - Select `Run All` in the notebook to create the connections.
+
+## Step 5: Proceed to the workshop
+
+1. From VS Code, create a folder called `workshop`.
+1. Proceed to the [Workshop](workshop.md) section.
