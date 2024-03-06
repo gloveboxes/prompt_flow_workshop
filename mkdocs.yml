@@ -2,6 +2,8 @@ site_name: MS AI Tour - Introduction to Prompt Flow and RAG
 
 nav:
   - Introduction: index.md
+  - Proxy: proxy.md
+  - Provisioning: provisioning.md
   - Workshop: workshop.md
   - Deployment: deployment.md
   - Demo cheat sheet: cheat_sheet.md
