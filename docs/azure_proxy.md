@@ -44,8 +44,16 @@ To run the workshop on your own computer, complete the following steps:
 
 1. Create a Python virtual environment:
 
+    On Windows:
+
     ```shell
     python -m venv .venv
+    ```
+
+    On macOS and Linux:
+
+    ```shell
+    python3 -m venv .venv
     ```
 
 1. Activate the virtual environment:
