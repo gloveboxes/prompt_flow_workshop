@@ -2,7 +2,7 @@
 
 ## Slides
 
-The PowerPoint slides with speaker notes are available for download
+The companion PowerPoint slides with speaker notes are available for download
 
 1. [English](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fgloveboxes%2Fprompt_flow_demo_docs%2Fmain%2Fdocs%2Fresources%2FBuild%2520your%2520RAG%2520Application%2520with%2520Prompt%2520flow%2520in%2520Azure%2520AI%2520Studio%2520-%2520dglover.pptx)
 1. [Japanese](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fgloveboxes%2Fprompt_flow_demo_docs%2Fmain%2Fdocs%2Fresources%2FBRK408JP_jp-BRK408AU_Build your RAG Application with Prompt flow in Azure AI Studio - dglover.pptx)
@@ -13,8 +13,8 @@ This workshop is a Prompt Flow/RAG 101. An introduction to the key concepts of b
 
 There are two approaches to grounding your LLM apps with your data. You can either fine tune a model or use the RAG pattern.
 
-1. Fine tuning a model is complex and expensive.
-1. RAG - Retrieval Augmented Generation. RAG is an industry approach to enriching a prompt with context, it is cheaper, less complex than fine tuning a model, easier to leverage existing IT investments.
+1. Fine tuning a model is complex and expensive, though there are some use cases where it is the best approach.
+1. RAG - Retrieval Augmented Generation. RAG is an industry approach to enriching a prompt with context, it is cheaper, less complex than fine tuning a model, easier to leverage existing IT investments. This workshop focuses on the RAG pattern.
 
 Grounding is the process of connecting your Large Language Model (LLM) to your data. It is a critical step to ensure that the model's responses are relevant and aligned with current knowledge. Grounding also helps prevent the model from generating misleading or inaccurate information.
 
