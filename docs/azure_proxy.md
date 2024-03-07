@@ -37,6 +37,11 @@ To run the workshop on your own computer, complete the following steps:
     ```
 
 1. Navigate to the `contoso-chat-proxy` folder.
+
+    ```shell
+    cd contoso-chat-proxy
+    ```
+
 1. Create a Python virtual environment:
 
     ```shell
