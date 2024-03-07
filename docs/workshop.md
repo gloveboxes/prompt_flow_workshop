@@ -1,6 +1,13 @@
 # Prompt Flow Workshop
 
-## Step 1: Create your first Prompt Flow
+This workshop demonstrates how to use Prompt Flow to create a chatbot that is grounded with product and customer information. You'll learn how to:
+
+1. Create a Prompt Flow.
+1. Create a RAG pattern (Retrieval, Augmentation, Generation) to ground the chatbot with context.
+1. How to evaluate the chatbot performance.
+1. How to test and deploy the chatbot.
+
+## Create your first Prompt Flow
 
 In this section you'll learn the basics of Prompt Flow with VS Code.
 
@@ -46,7 +53,15 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
 
 1. Switch back to the `flow.dag.yaml` file.
 
-## Step 2: Retrieve, the R in RAG
+## Create a RAG pattern app
+
+Next, we'll create a RAG pattern app that will ground the LLM prompt with product and customer information. The steps are as follows:
+
+1. **Retrieve**, the R in RAG: Retrieve product and customer information.
+1. **Augment**, the A in RAG: Augment the LLM prompt with product and customer information.
+1. **Generate**, the G in RAG: Generate a response from the LLM.
+
+## Step 1: Retrieve, the R in RAG
 
 In this step there will be two retrievals that will be used to ground the LLM prompt with product information and customer order history.
 
@@ -154,7 +169,7 @@ Follow these steps to retrieve the product and customer information:
 
     ![](./media/debug-tool.png)
 
-## Step 3: Augmentation, the A in RAG
+## Step 2: Augmentation, the A in RAG
 
 In this step you'll learn how to augment the LLM prompt with product and customer information to create a prompt that is grounded with context.
 
@@ -244,7 +259,7 @@ Prompt Flow uses [Jinja2](https://pypi.org/project/Jinja2/) a templating languag
 
 1. When the execution has completed, select the **outputs** tool and **open in new tab** to review the output from the Jinja template.
 
-## Step 4: Generation, the G in RAG
+## Step 3: Generation, the G in RAG
 
 In this step you'll learn how to generate a response from the LLM.
 
@@ -338,7 +353,7 @@ Next, the prompt that was generated in the previous step will be passed to the L
 
     ![](./media/end-2-end-response.png)
 
-## Step 5: Prompt evaluations
+## Prompt evaluations
 
 In this step you'll learn how to evaluate the effectiveness of the chat. The evaluation is done by running the chat against the original contoso-chat prompt flow and using the GPT-4 model to evaluate the chat and score how well it performs. There are a number of use cases for evals, including CI/CD, A/B testing, and model selection.
 
@@ -347,7 +362,7 @@ In this step you'll learn how to evaluate the effectiveness of the chat. The eva
     - A groundedness metric is calculated and returned.
 1. Note this demo runs against the original contoso-chat prompt flow, not the one we just built.
 
-## Step 6: Testing and deployment
+## Testing and deployment
 
 ### Local testing
 
@@ -364,4 +379,3 @@ Before deploying the LLM app to Azure, it can be useful to run it locally for te
 1. A browser page will open, and then you can interact with the LLM app.
 
 1. To exit the app, from the VS Code terminal, press <kbd>ctrl+c</kbd>.
-
