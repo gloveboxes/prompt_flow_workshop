@@ -1,6 +1,6 @@
 # Event access to Azure AI resources
 
-You are following these instructions because you are participating in an event where the Azure AI resources are provided for you. In this case, you'll be given an Azure AI Proxy Endpoint and a time bound API Key to access the Azure AI resources.
+You are following these instructions because you are participating in an event where the Azure AI resources for the workshop are provided for you. In this case, you'll be given an Azure AI Proxy Endpoint and a time bound API Key to access the Azure AI resources.
 
 You will perform the follow steps:
 
@@ -78,10 +78,10 @@ To run the workshop with GitHub Codespaces, complete the following steps:
 
 ## Create the Prompt Flow connections
 
-1. Update the `.env.proxy` file with the Azure AI Proxy Endpoint and API Key provided to you.
+1. From VS Code, update the `.env.proxy` file with the Azure AI Proxy Endpoint and API Key provided to you.
 1. Configure the Prompt Flow connections:
 
-    - Open the `connections` folder and open the `proxy-create-connections.ipynb` notebook.
+    - Open the `connections` folder, then open the `proxy-create-connections.ipynb` notebook.
     - You will be prompted to install the Jupyter extension, select **Install**.
     - Select `Run All` in the notebook to create the connections.
 
