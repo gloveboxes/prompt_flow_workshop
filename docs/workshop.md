@@ -19,26 +19,28 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
 
     ![](./media/visual_editor.png)
 
-1. Adjust the layout of the visual editor with the **DAG Tools** to suit your preferences. Experiment with the **DAG Settings** to change the layout.
+1. Experiment with the **DAG Tools** to change the layout.
 
     ![](./media/dag-settings.png)
 
 1. Set the Prompt Flow parameters:
-    - Set the **inputs** question to `what tents can you recommend for beginners?`.
+    - Select the **inputs** tool in the visual editor, then set the **question** to `what tents can you recommend for beginners?`.
     - Select the **Chat** tool and set the **connection** to `aoai-connection`.
-    - **Workaround**, if you forget to set these parameters, the flow may not execute using the **Run All** button. Set the missing parameters and run the flow with the **Debug** option <kbd>F5</kbd>.
 
-1. Run the flow by selecting **Run All** or <kbd>shift+F5</kbd>.
+      !!! tip
+          If you forget to set these parameters, the flow may not execute using the **Run All** button. Set the missing parameters and run the flow with the **Debug** option <kbd>F5</kbd>.
+
+1. Run the flow by selecting **Run All** or <kbd>shift+F5</kbd>. This will execute the flow and will pass the question to the LLM. Note, the LLM will return a response that is **not** grounded with product or customer information.
 
     ![standard mode](./media/standard_mode.png)
 
 1. Select **Run it with Standard Mode**.
 
-1. Review Prompt Flow tab to show tokens used and run duration
+1. When the flow completes, select **outputs** from the Visual Editor and review the Prompt Flow tab to show tokens used and run duration.
 
     ![](./media/prompt_stats.png)
 
-1. Select the **outputs** tool, then select **"Output in new tab"**.
+1. Review the **Outputs & Logs** for the **outputs** tool. Select **open in new tab** to review the output from the LLM.
 
     ![output in new tab](./media/output_in_tab.png)
 
