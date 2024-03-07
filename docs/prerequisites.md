@@ -1,4 +1,4 @@
-# Provision Azure workshop resources
+# Azure AI workshop resources
 
 There are two ways you can run this workshop.
 
