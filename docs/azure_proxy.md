@@ -27,6 +27,7 @@ To run the workshop on your own computer, complete the following steps:
     - On Windows install [Python](https://www.python.org/downloads/), skip for macOS and Linux as Python is pre-installed.
     - [Visual Studio Code](https://code.visualstudio.com/)
     - [Python VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - [Prompt Flow VS Code Extension](https://marketplace.visualstudio.com/items?itemName=prompt-flow.prompt-flow)
 
 1. From the command line, navigate to your preferred folder for the workshop.
 1. Clone the Contoso Chat Proxy repository from GitHub:
