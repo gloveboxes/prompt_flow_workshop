@@ -176,7 +176,7 @@ Follow these steps to retrieve the product and customer information:
 In this step you'll learn how to augment the LLM prompt with product and customer information to create a prompt that is grounded with context.
 
 1. **Close the Visual editor tab to avoid issues with the next steps.**
-1. From VS Code, navigate to the `workshop` folder and open the **flow.dag.yaml** file. The file contains the YAML representation of the Prompt Flow.
+1. From VS Code, navigate to the **workshop** folder and open the **flow.dag.yaml** file. The file contains the YAML representation of the Prompt Flow.
 1. Replace the existing flow with the following YAML.
 
     ``` { .yaml .copy }
@@ -263,10 +263,10 @@ Prompt Flow uses [Jinja2](https://pypi.org/project/Jinja2/) a templating languag
 
 ## Step 3: Generation, the G in RAG
 
-In this step you'll learn how to generate a response from the LLM.
+In this step you'll learn how to generate a response from the LLM using the a prompt grounded with product and customer information.
 
 1. **Close the Visual editor tab to avoid issues with the next steps.**
-1. From VS Code, navigate to the `workshop` folder and open the **flow.dag.yaml** file. The file contains the YAML representation of the Prompt Flow.
+1. From VS Code, navigate to the **workshop** folder and open the **flow.dag.yaml** file. The file contains the YAML representation of the Prompt Flow.
 1. Replace the existing flow with the following YAML.
 
     ``` { .yaml .copy }
@@ -359,12 +359,12 @@ Next, the prompt that was generated in the previous step will be passed to the L
 
 In this step you'll learn how to evaluate the effectiveness of the chat. The evaluation is done by running the chat against the original contoso-chat prompt flow and using the GPT-4 model to evaluate the chat and score how well it performs. There are a number of use cases for evals, including CI/CD, A/B testing, and model selection.
 
-1. You should run the `/eval/evaluate-chat-local.ipynb`` and review the use of gpt-4 to evaluate the effectiveness of the chat.
+1. You should run the **/eval/evaluate-chat-local.ipynb** notebook and review the use of gpt-4 to evaluate the effectiveness of the chat.
     - This notebook calls the `groundedness` Prompt Flow in the `eval` folder which calls GPT-4 to evaluate the context that was sent to the LLM and the response that was returned.
     - A groundedness metric is calculated and returned.
 1. Note this demo runs against the original contoso-chat prompt flow, not the one we just built.
 
-## How to test the chatbot locally
+## Test the LLM app locally
 
 Before deploying the LLM app to Azure, it can be useful to run it locally for testing.
 
