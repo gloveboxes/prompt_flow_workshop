@@ -21,6 +21,8 @@ You can run the workshop on your own computer or with GitHub Codespaces.
 
 ### Run the workshop on your own computer
 
+Tested and supported on Windows 11 x64 and macOS Apple Silicon. Fails on Windows and Linux on Arm, use GitHub Codespaces instead.
+
 To run the workshop on your own computer, complete the following steps:
 
 1. Install the following:
