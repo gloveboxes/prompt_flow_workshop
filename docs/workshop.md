@@ -22,7 +22,7 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
     1. Select the **Chat flow with the template**.
     1. Finally, review the generated `flow.dag.yaml` file.
 
-1. Select the **Visual editor** link at the top of the `flow.dag.yaml` file to open the visual editor.
+1. Select the **Visual editor** link at the top of the `flow.dag.yaml` file to open the visual editor. This will show the visual representation of the flow. The visual elements include Prompt Flow **Tools** and Tool **Properties**.
 
     ![](./media/visual_editor.png)
 
@@ -34,16 +34,16 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
     - Select the **inputs** tool in the visual editor, then set the **question** to `what tents can you recommend for beginners?`.
     - Select the **Chat** tool and set the **connection** to `aoai-connection`.
 
-      !!! tip
-          If you forget to set these parameters, the flow may not execute using the **Run All** button. Set the missing parameters and run the flow with the **Debug** option <kbd>F5</kbd>.
+    !!! tip
+        If you forget to set these parameters, the flow may not execute using the **Run All** button. Set the missing parameters and run the flow with the **Debug** option <kbd>F5</kbd>.
 
-1. Run the flow by selecting **Run All** or <kbd>shift+F5</kbd>. This will execute the flow and will pass the question to the LLM. Note, the LLM will return a response that is **not** grounded with product or customer information.
+1. Run the flow by selecting **Run All** or <kbd>shift+F5</kbd>. This will execute the flow and will pass the question to the LLM. Keep in mind that the LLM will provide a response based on the data it was trained with. For now, the response does not have any knowledge of your product or customer information.
 
     ![standard mode](./media/standard_mode.png)
 
 1. Select **Run it with Standard Mode**.
 
-1. When the flow completes, select **outputs** from the Visual editor and review the Prompt Flow tab to show tokens used and run duration.
+1. When the flow completes, select the **outputs** tool from the Visual editor and review the Prompt Flow tab to show tokens used and run duration.
 
     ![](./media/prompt_stats.png)
 

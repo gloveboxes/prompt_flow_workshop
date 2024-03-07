@@ -8,6 +8,13 @@ You will perform the follow steps:
 1. Create the Prompt Flow connections.
 1. Proceed to the workshop.
 
+## Azure Resources backing the workshop
+
+The Azure AI resources for the workshop are provided by the Azure AI Proxy Endpoint. The Azure AI Proxy Endpoint provides access to the following Azure AI resources:
+
+- [Azure AI Search](https://azure.microsoft.com/products/ai-services/ai-search/). The Azure AI Search connection provides access to the `contoso-products` search index.
+- [Azure OpenAI](https://azure.microsoft.com/products/ai-services/openai-service). The Azure OpenAI connection provides access to the GPT-3.5-turbo and GPT-4 large language models (LLMs).
+
 ## Set up the workshop environment
 
 You can run the workshop on your own computer or with GitHub Codespaces.
@@ -76,9 +83,24 @@ To run the workshop with GitHub Codespaces, complete the following steps:
     !!! warning
         Be sure to stop the Codespace when you are done to avoid incurring charges.
 
+## Grounding data for the workshop
+
+There are two data sources for the workshop:
+
+1. Product information from Azure AI Search. This data is provided by the Azure AI Proxy Endpoint. The data was loaded from the `data` into Azure AI Search from the `data` folder.
+1. Customer order history data is loaded from the `data` folder into a Python Pandas DataFrame. The data is used to create a personalized shopping experience for the customer. In production, this data would be loaded from a database.
+
 ## Create the Prompt Flow connections
 
+The following connections are created:
+
+- **aoai-connection**: This connection is used to access Azure OpenAI embedding, gpt-35-turbo and gpt-4 large language models (LLMs).
+- **contoso-search**: This connection is used to access the Azure AI Search service and `contoso-products` search index.
+
+Create the Prompt Flow connections:
+
 1. From VS Code, update the `.env.proxy` file with the Azure AI Proxy Endpoint and API Key provided to you.
+
 1. Configure the Prompt Flow connections:
 
     - Open the `connections` folder, then open the `proxy-create-connections.ipynb` notebook.
