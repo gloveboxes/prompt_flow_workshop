@@ -66,7 +66,7 @@ Next, we'll create a RAG pattern app that will ground the LLM prompt with produc
 In this step there will be two retrievals that will be used to ground the LLM prompt with product information and customer order history.
 
 1. Query the product catalog Azure AI Search service for product information
-1. Query the customer Cosmos DB database for customer order history information.
+1. Query the customer database for customer order history information.
 
 ### Retrieving product information
 

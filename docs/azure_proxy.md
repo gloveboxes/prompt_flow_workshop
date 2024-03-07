@@ -87,8 +87,8 @@ To run the workshop with GitHub Codespaces, complete the following steps:
 
 There are two data sources for the workshop:
 
-1. Product information from Azure AI Search. This data is provided by the Azure AI Proxy Endpoint. The data was loaded from the `data` into Azure AI Search from the `data` folder.
-1. Customer order history data is loaded from the `data` folder into a Python Pandas DataFrame. The data is used to create a personalized shopping experience for the customer. In production, this data would be loaded from a database.
+1. Product information from Azure AI Search. This data is accessed via the Azure AI Proxy Endpoint. The data was loaded into Azure AI Search from the `data/product_info` folder using the `create-azure-search.ipynb` notebook.
+1. Customer order history data is loaded from the `data/customer_info` folder into a Python Pandas DataFrame. The data is used to create a personalized shopping experience for the customer. In production, this data would be accessed from a database such as [Cosmos DB](https://learn.microsoft.com/azure/cosmos-db/).
 
 ## Create the Prompt Flow connections
 
