@@ -54,10 +54,10 @@ To run the workshop on your own computer, complete the following steps:
 
     ```shell
     # In cmd.exe
-    venv\Scripts\activate.bat
-    
+    .venv\Scripts\activate.bat
+
     # In PowerShell
-    venv\Scripts\Activate.ps1
+    .venv\Scripts\Activate.ps1
     ```
 
     On macOS and Linux:
