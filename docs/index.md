@@ -16,7 +16,7 @@ There are two approaches to grounding your LLM apps with your data. You can eith
 1. Fine tuning a model is complex and expensive, though there are some use cases where it is the best approach.
 1. RAG - Retrieval Augmented Generation. RAG is an industry approach to enriching a prompt with context, it is cheaper, less complex than fine tuning a model, easier to leverage existing IT investments. This workshop focuses on the RAG pattern.
 
-Grounding is the process of connecting your Large Language Model (LLM) to your data. It is a critical step to ensure that the model's responses are relevant and aligned with current knowledge. Grounding also helps prevent the model from generating misleading or inaccurate information.
+Grounding connects your Large Language Model (LLM) to your data. It is a critical step to ensure that the model's responses are relevant and aligned with current knowledge. Grounding also helps prevent the model from generating misleading or inaccurate information.
 
 ## Rag pattern use cases
 
@@ -40,7 +40,7 @@ AI Studio is a generative AI development hub that provides access to thousands o
 
 ### What is Prompt Flow
 
-Azure Prompt Flow simplifies the process of prototyping, experimenting, and deploying AI applications powered by Large Language Models (LLMs). It is designed for developers, data scientists, researchers, or hobbyists who want to create LLM-based applications. With Azure Prompt Flow, you can create and compare multiple prompt variants, evaluate their performance, and debug your flows with ease.
+Azure Prompt Flow simplifies prototyping, experimenting, and deploying AI applications powered by Large Language Models (LLMs). It is designed for developers, data scientists, researchers, or hobbyists who want to create LLM-based applications. With Azure Prompt Flow, you can create and compare multiple prompt variants, evaluate their performance, and debug your flows with ease.
 
 ### VS Code code first support
 
