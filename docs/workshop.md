@@ -5,7 +5,7 @@ This workshop demonstrates how to use Prompt Flow to create a chatbot that is gr
 1. Create a Prompt Flow.
 1. Create a RAG pattern (Retrieval, Augmentation, Generation) to ground the chatbot with context.
 1. How to evaluate the chatbot performance.
-1. How to test and deploy the chatbot.
+1. How to test the chatbot locally.
 
 ## Create your first Prompt Flow
 
@@ -362,9 +362,7 @@ In this step you'll learn how to evaluate the effectiveness of the chat. The eva
     - A groundedness metric is calculated and returned.
 1. Note this demo runs against the original contoso-chat prompt flow, not the one we just built.
 
-## Testing and deployment
-
-### Local testing
+## How to test the chatbot locally
 
 Before deploying the LLM app to Azure, it can be useful to run it locally for testing.
 
