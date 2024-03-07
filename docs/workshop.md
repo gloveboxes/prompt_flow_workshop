@@ -22,7 +22,7 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
     1. Select the **Chat flow with the template**.
     1. Finally, review the generated `flow.dag.yaml` file.
 
-1. Select the **Visual Editor** link at the top of the `flow.dag.yaml` file to open the visual editor.
+1. Select the **Visual editor** link at the top of the `flow.dag.yaml` file to open the visual editor.
 
     ![](./media/visual_editor.png)
 
@@ -43,7 +43,7 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
 
 1. Select **Run it with Standard Mode**.
 
-1. When the flow completes, select **outputs** from the Visual Editor and review the Prompt Flow tab to show tokens used and run duration.
+1. When the flow completes, select **outputs** from the Visual editor and review the Prompt Flow tab to show tokens used and run duration.
 
     ![](./media/prompt_stats.png)
 
@@ -90,7 +90,7 @@ Next, both the question and vector are passed to the AI Search engine. AI Search
 
 Follow these steps to retrieve the product and customer information:
 
-1. **Close the Visual Editor tab to avoid issues with the next steps.**
+1. **Close the Visual editor tab to avoid issues with the next steps.**
 1. From VS Code, navigate to the **workshop** folder and open the **flow.dag.yaml** file. The file contains the YAML representation of the Prompt Flow.
 1. Replace the existing flow with the following YAML.
 
@@ -173,7 +173,7 @@ Follow these steps to retrieve the product and customer information:
 
 In this step you'll learn how to augment the LLM prompt with product and customer information to create a prompt that is grounded with context.
 
-1. **Close the Visual Editor tab to avoid issues with the next steps.**
+1. **Close the Visual editor tab to avoid issues with the next steps.**
 1. From VS Code, navigate to the `workshop` folder and open the **flow.dag.yaml** file. The file contains the YAML representation of the Prompt Flow.
 1. Replace the existing flow with the following YAML.
 
@@ -263,7 +263,7 @@ Prompt Flow uses [Jinja2](https://pypi.org/project/Jinja2/) a templating languag
 
 In this step you'll learn how to generate a response from the LLM.
 
-1. **Close the Visual Editor tab to avoid issues with the next steps.**
+1. **Close the Visual editor tab to avoid issues with the next steps.**
 1. From VS Code, navigate to the `workshop` folder and open the **flow.dag.yaml** file. The file contains the YAML representation of the Prompt Flow.
 1. Replace the existing flow with the following YAML.
 
