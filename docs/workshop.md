@@ -70,7 +70,7 @@ In this step there will be two retrievals that will be used to ground the LLM pr
 
 ### Retrieving product information
 
-To retrieve product information, we'll use the Azure AI Search index that was created in the previous section. First, we'll generate an embedding for the question and perform a keyword and semantic search on the product index in Azure AI Search.
+To retrieve product information, we'll use Azure AI Search. First, we'll generate an embedding for the question and perform a hybrid keyword and semantic search on the `contoso-products` index in Azure AI Search.
 
 #### Generate an embedding
 
@@ -86,7 +86,11 @@ Next, both the question and vector are passed to the AI Search engine. AI Search
 
 ![](./media/ai-search-query.png)
 
-### Retrieving data
+### Retrieving customer information
+
+To retrieve customer order history, we'll use a custom `customer_lookup` tool to query the customer order history database.
+
+### Update the Prompt Flow
 
 Follow these steps to retrieve the product and customer information:
 
@@ -156,11 +160,9 @@ Follow these steps to retrieve the product and customer information:
 
     ![](./media/tool-link.png)
 
-1. Review the code for the **customer_lookup** tool. The tool performs a query on the Cosmos DB database to retrieve customer information.
+1. Set a breakpoint in the **customer_lookup** tool on line 4.
 
-1. Set a breakpoint at line 9.
-
-    ![](./media/breakpoint-example.png)
+1. Review the code for the **customer_lookup** tool. The tool retrieves customer information using the `inputs` tool `customerId` property. You can set the `customerId` value to any number between 1 and 12.
 
 1. Select **Debug** the **retrieve_documentation** tool. 
     - The prompt flow execution starts and stops at the breakpoint you set in the **retrieve_documentation** tool. 
