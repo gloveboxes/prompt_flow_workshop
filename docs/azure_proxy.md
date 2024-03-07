@@ -53,7 +53,11 @@ To run the workshop on your own computer, complete the following steps:
     On Windows:
 
     ```shell
-    .venv/Scripts/activate
+    # In cmd.exe
+    venv\Scripts\activate.bat
+    
+    # In PowerShell
+    venv\Scripts\Activate.ps1
     ```
 
     On macOS and Linux:
