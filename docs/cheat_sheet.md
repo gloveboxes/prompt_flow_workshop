@@ -44,7 +44,7 @@ Azure Prompt Flow simplifies the process of prototyping, experimenting, and depl
 1. Select <kbd>ctrl or cmd + n</kbd> to create a new tool.
 1. Select the **embedding** tool.
 1. Set the **connection** to `aoai-connection`.
-1. Set the **deployment_name** to `text-embedding-ada-002`.
+1. Set the **deployment_name** to `text-embedding-3-small`.
 1. Connect the **embedding** tool to the **question** input.
 1. Run the flow.
 
@@ -94,7 +94,7 @@ nodes:
     tool: promptflow.tools.embedding.embedding
   inputs:
     connection: aoai-connection
-    deployment_name: text-embedding-ada-002
+    deployment_name: text-embedding-3-small
     input: ${inputs.question}
 - name: retrieve_documentation
   type: python
@@ -160,7 +160,7 @@ nodes:
     tool: promptflow.tools.embedding.embedding
   inputs:
     connection: aoai-connection
-    deployment_name: text-embedding-ada-002
+    deployment_name: text-embedding-3-small
     input: ${inputs.question}
 - name: retrieve_documentation
   type: python
@@ -231,7 +231,7 @@ nodes:
     tool: promptflow.tools.embedding.embedding
   inputs:
     connection: aoai-connection
-    deployment_name: text-embedding-ada-002
+    deployment_name: text-embedding-3-small
     input: ${inputs.question}
 - name: retrieve_documentation
   type: python
