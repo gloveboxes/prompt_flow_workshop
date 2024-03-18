@@ -134,6 +134,7 @@ In this step you'll learn how to load customer data into [Cosmos DB](https://doc
 ## Step 4: Configure the Prompt Flow connections
 
 1. Update the `.env.sample` file with the Azure AI Search and Cosmos DB connection strings.
+    - Update the AI_PROXY_ENDPOINT and AI_PROXY_KEY with the values from the Azure AI Proxy Endpoint. Ignore the rest of the environment variables.
 1. Configure the Prompt Flow connections:
     - Open the `connections` folder and open the `create-connections.ipynb` notebook.
     - You will be prompted to install the Jupyter extension, select **Install**.
