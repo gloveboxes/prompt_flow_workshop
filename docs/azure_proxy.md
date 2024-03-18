@@ -122,6 +122,7 @@ The following connections are created:
 Create the Prompt Flow connections:
 
 1. From VS Code, update the `.env.proxy` file with the Azure AI Proxy Endpoint and API Key provided to you.
+    - Update the AI_PROXY_ENDPOINT and AI_PROXY_KEY with the values from the Azure AI Proxy Endpoint. Ignore the rest of the environment variables.
 
 1. Configure the Prompt Flow connections:
 
