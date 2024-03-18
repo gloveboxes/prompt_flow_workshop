@@ -4,7 +4,7 @@ You are following these instructions because you are participating in an event w
 
 You will perform the follow steps:
 
-1. Set up the workshop environment on your own computer or with GitHub Codespaces.
+1. Set up the workshop environment with GitHub Codespaces or on your own computer.
 1. Create the Prompt Flow connections.
 1. Proceed to the workshop.
 
@@ -17,7 +17,24 @@ The Azure AI resources for the workshop are provided by the Azure AI Proxy Endpo
 
 ## Set up the workshop environment
 
-You can run the workshop on your own computer or with GitHub Codespaces.
+You can run the workshop with GitHub Codespaces **or** on your own computer if you have admin rights to the computer.
+
+### Run the workshop with GitHub Codespaces
+
+This is the recommended option. To run the workshop with GitHub Codespaces, complete the following steps:
+
+1. Fork the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy) repository to your GitHub account.
+
+    ![](media/repo_fork.png)
+
+1. Open the forked repository in GitHub Codespaces. In the forked repository, select `Code`, then the `Codespaces` tab, and then select `Create codespace on main`. The GitHub Codespaces environment will be created for you. It will take approximately 5 minutes to create the environment.
+
+    <!-- ![](media/codespaces_open.png) -->
+
+    !!! warning
+        Be sure to stop the Codespace when you are done to avoid incurring charges.
+
+1. Proceed to the [grounding data for the workshop](#grounding-data-for-the-workshop) section.
 
 ### Run the workshop on your own computer
 
@@ -87,21 +104,6 @@ To run the workshop on your own computer, complete the following steps:
     ```shell
     code .
     ```
-
-### Run the workshop with GitHub Codespaces
-
-To run the workshop with GitHub Codespaces, complete the following steps:
-
-1. Fork the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy) repository to your GitHub account.
-
-    ![](media/repo_fork.png)
-
-1. Open the forked repository in GitHub Codespaces. In the forked repository, select `Code`, then the `Codespaces` tab, and then select `Create codespace on main`. The GitHub Codespaces environment will be created for you. It will take approximately 5 minutes to create the environment.
-
-    <!-- ![](media/codespaces_open.png) -->
-
-    !!! warning
-        Be sure to stop the Codespace when you are done to avoid incurring charges.
 
 ## Grounding data for the workshop
 
