@@ -39,7 +39,7 @@ To run the workshop with GitHub Codespaces, complete the following steps:
 
 ## Step 3: Load grounding data
 
-The solutions uses two data sources to ground the LLM prompt. The first is an Azure AI Search index that contains product information. The second is a Cosmos DB database that contains customer information.
+The solution uses two data sources to ground the LLM prompt. The first is an Azure AI Search index that contains product information. The second is a Cosmos DB database that contains customer information.
 
 ### Load the product catalog
 
