@@ -44,7 +44,7 @@ There are several approaches to building RAG applications, there are code centri
 
 Prompt Flow is a low code/no code approach to building RAG applications.
 
-Azure Prompt Flow simplifies prototyping, experimenting, and deploying AI applications powered by Large Language Models (LLMs). It is designed for developers, data scientists, researchers, or hobbyists who want to create LLM-based applications. With Azure Prompt Flow, you can create and compare multiple prompt variants, evaluate their performance, and debug your flows with ease.
+Azure Prompt Flow simplifies prototyping, experimenting, and deploying AI applications powered by Large Language Models (LLMs). Prompt Flow is designed for developers, data scientists, researchers, or hobbyists who want to create LLM-based applications. With Azure Prompt Flow, you can create and compare multiple prompt variants, evaluate their performance, and debug your flows with ease.
 
 ### VS Code code first support
 
