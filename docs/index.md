@@ -40,7 +40,7 @@ AI Studio is a generative AI development hub that provides access to thousands o
 
 ### What is Prompt Flow
 
-There a several approaches to building RAG applications, there are code centric approaches like LangChain, Semantic Kernel, and the OpenAI Assistant API and low code/no code approaches.
+There are several approaches to building RAG applications, there are code centric approaches like LangChain, Semantic Kernel, and the OpenAI Assistant API and low code/no code approaches.
 
 Prompt Flow is a low code/no code approach to building RAG applications.
 
