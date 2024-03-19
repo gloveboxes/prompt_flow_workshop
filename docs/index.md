@@ -24,7 +24,7 @@ Grounding connects your Large Language Model (LLM) to your data. It is a critica
 1. **Conversational Agents:** Improving chatbots or virtual assistants for more natural and contextually relevant interactions.
 1. **Content Generation:** Creating high-quality articles, summaries, or creative writing with improved coherence.
 1. **Language Translation:** Enhancing language translation services for more nuanced and context-aware translations.
-1. **Code Generation:** Assisting developers in generating code snippets or completing code with better contextual understanding.
+1. **Code Generation:** Helping developers in generating code snippets or completing code with better contextual understanding.
 1. **Customer Support:** Improving automated responses in customer service applications for more effective and empathetic communication.
 1. **Education:** Facilitating personalized learning experiences by providing tailored explanations and resources based on user queries.
 
