@@ -48,7 +48,7 @@ Azure Prompt Flow simplifies prototyping, experimenting, and deploying AI applic
 
 ### VS Code code first support
 
-There is now a [Prompt Flow extension for VS Code](https://marketplace.visualstudio.com/items?itemName=prompt-flow.prompt-flow) to build your LLM apps, this extension makes it easy to use version control systems like `git` as well as collaborating with others.
+There is now a [Prompt Flow extension for VS Code](https://marketplace.visualstudio.com/items?itemName=prompt-flow.prompt-flow) to build your LLM apps; this extension makes it easy to use version control systems like `git` as well as collaborating with others.
 
 <!-- ### Why streamlining LLM Ops with Prompt Flow
 
