@@ -4,7 +4,7 @@ You are following these instructions because you are participating in an event w
 
 You will perform the follow steps:
 
-1. Set up the workshop environment with GitHub Codespaces or on your own computer.
+1. Set up the workshop environment with GitHub Codespaces.
 1. Create the Prompt Flow connections.
 1. Proceed to the workshop.
 
@@ -15,13 +15,7 @@ The Azure AI resources for the workshop are provided by the Azure AI Proxy Endpo
 - [Azure AI Search](https://azure.microsoft.com/products/ai-services/ai-search/). The Azure AI Search connection provides access to the `contoso-products` search index.
 - [Azure OpenAI](https://azure.microsoft.com/products/ai-services/openai-service). The Azure OpenAI connection provides access to the GPT-3.5-turbo, GPT-4 large, and embedding models.
 
-## Set up the workshop environment
-
-You can run the workshop with GitHub Codespaces **or** on your own computer if you have admin rights to the computer.
-
-### Run the workshop with GitHub Codespaces
-
-This is the recommended option. To run the workshop with GitHub Codespaces, complete the following steps:
+To run the workshop with GitHub Codespaces, complete the following steps:
 
 1. Fork the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy) repository to your GitHub account.
 
@@ -33,77 +27,6 @@ This is the recommended option. To run the workshop with GitHub Codespaces, comp
 
     !!! warning
         Be sure to stop the Codespace when you are done to avoid incurring charges.
-
-1. Proceed to the [grounding data for the workshop](#grounding-data-for-the-workshop) section.
-
-### Run the workshop on your own computer
-
-Tested and supported on Windows 11 x64 and macOS Apple Silicon. Fails on Windows and Linux on Arm, use GitHub Codespaces instead.
-
-To run the workshop on your own computer, complete the following steps:
-
-1. Install the following:
-    - On Windows install [Python](https://www.python.org/downloads/), skip for macOS and Linux as Python is pre-installed.
-    - [Visual Studio Code](https://code.visualstudio.com/)
-    - [Python VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-    - [Prompt Flow VS Code Extension](https://marketplace.visualstudio.com/items?itemName=prompt-flow.prompt-flow)
-
-1. From the command line, navigate to your preferred folder for the workshop.
-1. Clone the Contoso Chat Proxy repository from GitHub:
-
-    ```shell
-    git clone https://github.com/gloveboxes/contoso-chat-proxy.git
-    ```
-
-1. Navigate to the `contoso-chat-proxy` folder.
-
-    ```shell
-    cd contoso-chat-proxy
-    ```
-
-1. Create a Python virtual environment:
-
-    On Windows:
-
-    ```shell
-    python -m venv .venv
-    ```
-
-    On macOS and Linux:
-
-    ```shell
-    python3 -m venv .venv
-    ```
-
-1. Activate the virtual environment:
-
-    On Windows:
-
-    ```shell
-    # In cmd.exe
-    .venv\Scripts\activate.bat
-
-    # In PowerShell
-    .venv\Scripts\Activate.ps1
-    ```
-
-    On macOS and Linux:
-
-    ```shell
-    source .venv/bin/activate
-    ```
-
-1. Install the required Python packages:
-
-    ```shell
-    pip install -r requirements.txt
-    ```
-
-1. Open the `contoso-chat-proxy` folder in Visual Studio Code.
-
-    ```shell
-    code .
-    ```
 
 ## Grounding data for the workshop
 

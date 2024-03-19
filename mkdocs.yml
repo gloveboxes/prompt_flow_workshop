@@ -5,6 +5,7 @@ nav:
   - Prerequisites: prerequisites.md
   - Workshop: workshop.md
   - Deployment: deployment.md
+  - Local: local.md
   - Demo cheat sheet: cheat_sheet.md
 
 plugins:
