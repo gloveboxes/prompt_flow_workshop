@@ -56,7 +56,7 @@ There is now a [Prompt Flow extension for VS Code](https://marketplace.visualstu
 
 ### Prompt Flow and LangChain
 
-A question you might be asking is what is the difference between Prompt Flow and LangChain. Prompt Flow is an end-to-end solution for prototyping, evaluation, deployment to production, and monitoring. LangChain is a library that you could use in your Prompt Flows.
+A question you might be ask is what is the difference between Prompt Flow and LangChain. Prompt Flow is an end-to-end solution for prototyping, evaluation, deployment to production, and monitoring. LangChain is a library that you could use in your Prompt Flows.
 
 ![](./media/what_is_prompt_flow.png)
 
