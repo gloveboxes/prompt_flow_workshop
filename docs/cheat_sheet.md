@@ -25,6 +25,10 @@ AI Studio is a generative AI development hub that provides access to thousands o
 
 ## Prompt Flow
 
+There a several approaches to building RAG applications, there are code centric approaches like LangChain, Semantic Kernel, and the OpenAI Assistant API and low code/no code approaches.
+
+Prompt Flow is a low code/no code approach to building RAG applications.
+
 Azure Prompt Flow simplifies the process of prototyping, experimenting, and deploying AI applications powered by Large Language Models (LLMs). 
 
 ## Step 1: Provisioning Azure resources
