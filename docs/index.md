@@ -14,7 +14,7 @@ This workshop is a Prompt Flow/RAG 101. An introduction to the key concepts of b
 There are two approaches to grounding your LLM apps with your data. You can either fine tune a model or use the RAG pattern.
 
 1. Fine tuning a model is complex and expensive, though there are some use cases where it is the best approach.
-1. RAG - Retrieval Augmented Generation. RAG is an industry approach to enriching a prompt with context, it is cheaper, less complex than fine tuning a model, easier to leverage existing IT investments. This workshop focuses on the RAG pattern.
+1. RAG - Retrieval Augmented Generation. RAG is an industry approach to enriching a prompt with context, it is cheaper, less complex than fine tuning a model, easier to use existing IT investments. This workshop focuses on the RAG pattern.
 
 Grounding connects your Large Language Model (LLM) to your data. It is a critical step to ensure that the model's responses are relevant and aligned with current knowledge. Grounding also helps prevent the model from generating misleading or inaccurate information.
 
@@ -78,7 +78,7 @@ The solution is a chatbot that helps customers find the right product for their 
 
 ![](./media/rag-architecture.png)
 
-The Contoso outdoor eCommerce site calls the Prompt Flow endpoint that was deployed to Azure to provide product recommendations to customers.
+The Contoso outdoor eCommerce site calls the Prompt Flow endpoint deployed to Azure to provide product recommendations to customers.
 
 ![](./media/contoso-outdoors.jpg)
 
