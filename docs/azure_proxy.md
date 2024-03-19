@@ -1,6 +1,6 @@
 # Event access to Azure AI resources
 
-You are following these instructions because you are participating in an event where the Azure AI resources for the workshop are provided for you. In this case, you'll be given an [Azure AI Proxy](https://aka.ms/ai-proxy-docs) Endpoint and a time bound API Key to access the Azure AI resources.
+You are following these instructions because you are taking part in an event where the Azure AI resources for the workshop are provided for you. In this case, you'll be given an [Azure AI Proxy](https://aka.ms/ai-proxy-docs) Endpoint and a time bound API Key to access the Azure AI resources.
 
 You will perform the follow steps:
 
@@ -26,7 +26,7 @@ To run the workshop with GitHub Codespaces, complete the following steps:
     <!-- ![](media/codespaces_open.png) -->
 
     !!! warning
-        Be sure to stop the Codespace when you are done to avoid incurring charges.
+        When you have finished, be sure to stop the Codespace to avoid incurring unnecessary charges.
 
 ## Grounding data for the workshop
 

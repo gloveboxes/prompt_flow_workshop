@@ -35,7 +35,7 @@ To run the workshop with GitHub Codespaces, complete the following steps:
     <!-- ![](media/codespaces_open.png) -->
 
     !!! warning
-        Be sure to stop the Codespace when you are done to avoid incurring charges.
+        When you have finished, be sure to stop the Codespace to avoid incurring unnecessary charges.
 
 ## Step 3: Load grounding data
 
