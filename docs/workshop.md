@@ -1,6 +1,6 @@
 # Prompt Flow Workshop
 
-This workshop demonstrates how to use Prompt Flow to create a chatbot that is grounded with product and customer information. You'll learn how to:
+This workshop shows how to use Prompt Flow to create a chatbot that is grounded with product and customer information. You'll learn how to:
 
 1. Create a Prompt Flow.
 1. Create a RAG pattern (Retrieval, Augmentation, Generation) to ground the chatbot with context.
@@ -353,7 +353,7 @@ Next, the prompt that was generated in the previous step will be passed to the L
 
 ## Prompt evaluations
 
-In this step you'll learn how to evaluate the effectiveness of the chat. The evaluation is done by running the chat against the original contoso-chat prompt flow and using the GPT-4 model to evaluate the chat and score how well it performs. There are a number of use cases for evals, including CI/CD, A/B testing, and model selection.
+In this step you'll learn how to evaluate the effectiveness of the chat. The evaluation is done by running the chat against the original contoso-chat prompt flow and using the GPT-4 model to evaluate the chat and score how well it performs. There are several use cases for evals, including CI/CD, A/B testing, and model selection.
 
 1. You should run the **/eval/evaluate-chat-local.ipynb** notebook and review the use of gpt-4 to evaluate the effectiveness of the chat.
     - This notebook calls the `groundedness` Prompt Flow in the `eval` folder which calls GPT-4 to evaluate the context that was sent to the LLM and the response that was returned.
