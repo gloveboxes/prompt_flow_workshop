@@ -78,7 +78,7 @@ The solution is a chatbot that helps customers find the right product for their 
 
 ![](./media/rag-architecture.png)
 
-The Contoso outdoor eCommerce site calls the Prompt Flow chatbot to provide product recommendations to customers.
+The Contoso outdoor eCommerce site calls the Prompt Flow endpoint that was deployed to Azure to provide product recommendations to customers.
 
 ![](./media/contoso-outdoors.jpg)
 
