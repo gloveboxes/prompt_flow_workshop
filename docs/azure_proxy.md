@@ -15,18 +15,16 @@ The Azure AI resources for the workshop are provided by the Azure AI Proxy Endpo
 - [Azure AI Search](https://azure.microsoft.com/products/ai-services/ai-search/). The Azure AI Search connection provides access to the `contoso-products` search index.
 - [Azure OpenAI](https://azure.microsoft.com/products/ai-services/openai-service). The Azure OpenAI connection provides access to the GPT-3.5-turbo, GPT-4 large, and embedding models.
 
-To run the workshop with GitHub Codespaces, complete the following steps:
+To run the workshop with [GitHub Codespaces](https://docs.github.com/en/codespaces/overview), complete the following steps:
 
-1. Fork the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy) repository to your GitHub account.
-
-    ![](media/repo_fork.png)
-
-1. Open the forked repository in GitHub Codespaces. In the forked repository, select `Code`, then the `Codespaces` tab, and then select `Create codespace on main`. The GitHub Codespaces environment will be created for you. It will take approximately 5 minutes to create the environment.
+1. From your web browser, navigate to the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy) repo.
+1. Select the `<> Code` button, then select `Codespaces`.
+1. Next select `Create codespace in main`. This will start up a GitHub Codespaces environment for you. It will take approximately 1 minute to create the environment.
 
     <!-- ![](media/codespaces_open.png) -->
 
     !!! warning
-        When you have finished, be sure to stop the Codespace to avoid incurring unnecessary charges.
+        When you have finished the workshop, be sure to stop the Codespace to avoid incurring unnecessary charges.
 
 ## Grounding data for the workshop
 
@@ -49,7 +47,6 @@ Create the Prompt Flow connections:
 1. Configure the Prompt Flow connections:
 
     - Open the `connections` folder, then open the `proxy-create-connections.ipynb` notebook.
-    - You will be prompted to install the Jupyter extension, select **Install**.
     - Select `Run All` in the notebook to create the connections.
 
 ## Proceed to the workshop
