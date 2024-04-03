@@ -17,7 +17,7 @@ The Azure AI resources for the workshop are provided by the Azure AI Proxy Endpo
 
 To run the workshop with [GitHub Codespaces](https://docs.github.com/en/codespaces/overview), complete the following steps:
 
-1. From your web browser, navigate to the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy){target=_blank} repo. This will open the GitHub repository in a new browser tab.
+1. From your web browser, navigate to the [Contoso Chat Proxy](https://github.com/gloveboxes/contoso-chat-proxy){target=_blank} repo. This will open the GitHub repository in a new browser tab so you can follow the instructions in this tab.
 1. Select the `<> Code` button, then select `Codespaces`.
 1. Next select `Create codespace in main`. This will start up a GitHub Codespaces environment for you. It will take approximately 1 minute to create the environment.
 
