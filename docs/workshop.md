@@ -363,7 +363,7 @@ In this step you'll learn how to evaluate the effectiveness of the chat. The eva
     - A groundedness metric is calculated and returned.
 1. Note this demo runs against the original contoso-chat prompt flow, not the one we just built.
 
-## Test the LLM app locally
+<!-- ## Test the LLM app locally
 
 Before deploying the LLM app to Azure, it can be useful to run it locally for testing.
 
@@ -377,4 +377,4 @@ Before deploying the LLM app to Azure, it can be useful to run it locally for te
 
 1. A browser page will open, and then you can interact with the LLM app.
 
-1. To exit the app, from the VS Code terminal, press <kbd>ctrl+c</kbd>.
+1. To exit the app, from the VS Code terminal, press <kbd>ctrl+c</kbd>. -->
