@@ -37,11 +37,9 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
     !!! tip
         If you forget to set these parameters, the flow may not execute using the **Run All** button. Set the missing parameters and run the flow with the **Debug** option <kbd>F5</kbd>.
 
-1. Run the flow by selecting **Run All** or <kbd>shift+F5</kbd>. This will execute the flow and will pass the question to the LLM.
+1. Run the flow by selecting **Run All** or <kbd>shift+F5</kbd>, then select **Run it with Standard Mode**. This will execute the flow and will pass the question to the LLM.
 
     ![standard mode](./media/standard_mode.png)
-
-1. Select **Run it with Standard Mode**.
 
 1. When the flow completes, select the **outputs** tool from the Visual editor and review the Prompt Flow tab to show tokens used and run duration.
 
