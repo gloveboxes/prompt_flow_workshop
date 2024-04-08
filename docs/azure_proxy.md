@@ -48,7 +48,7 @@ Create the Prompt Flow connections:
 
     - Open the `connections` folder, then open the **proxy-create-connections.ipynb** notebook.
     - Select `Run All` in the notebook to create the connections.
-    - You will be prompted to choose a kernel source, select `Python Environments` and then select the `Recommended` Python environment. At the time of writing, this is Python 3.11.8`.
+    - You will be prompted to choose a kernel source, select `Python Environments` and then select the `Recommended` Python environment. At the time of writing, this is Python 3.11.8.
 
 ## Proceed to the workshop
 
