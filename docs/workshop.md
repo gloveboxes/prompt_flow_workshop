@@ -148,6 +148,8 @@ Follow these steps to retrieve the product and customer information:
         conn: contoso-cosmos
     ```
 
+1. You may have to wait 5 to 10 seconds for the flow to validate.
+
 ### Custom tools
 
 1. Select **Visual editor** from the top of the **flow.dag.yaml** file.
