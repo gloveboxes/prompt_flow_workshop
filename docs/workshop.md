@@ -37,7 +37,7 @@ In this section you'll learn the basics of Prompt Flow with VS Code.
     !!! tip
         If you forget to set these parameters, the flow may not execute using the **Run All** button. Set the missing parameters and run the flow with the **Debug** option <kbd>F5</kbd>.
 
-1. Run the flow by selecting **Run All** or <kbd>shift+F5</kbd>, then select **Run it with Standard Mode**. This will execute the flow and will pass the question to the LLM.
+1. Run the flow by selecting **Run All** or <kbd>Shift+F5</kbd>, then select **Run it with Standard Mode**. This will execute the flow and will pass the question to the LLM.
 
     ![standard mode](./media/standard_mode.png)
 
@@ -251,7 +251,7 @@ Prompt Flow uses [Jinja2](https://pypi.org/project/Jinja2/) a templating languag
 1. Review the sections on safety, documentation (the product info), previous orders (from the customer lookup), and chat history.
 
 1. Switch back to the prompt flow visual editor.
-1. Press Shift+F5 or select **Run all** from the designer to run the complete Prompt Flow.
+1. Press <kbd>Shift+F5</kbd> or select **Run all** from the designer to run the complete Prompt Flow.
 
 
     <!-- ![](./media/customer_prompt_start.png) -->
@@ -346,7 +346,7 @@ Next, the prompt that was generated in the previous step will be passed to the L
 
 1. Switch back to the prompt flow visual editor.
 1. Select the **outputs** tool.
-1. Press Shift+F5 or select **Run all** from the designer to run the complete Prompt Flow.
+1. Press <kbd>Shift+F5</kbd> or select **Run all** from the designer to run the complete Prompt Flow.
 1. Review the **outputs** of the prompt flow execution by selecting the **outputs** tool, select **open in new tab**.
 1. Review the Prompt Flow tab to show tokens used and run duration.
 
