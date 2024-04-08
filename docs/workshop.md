@@ -251,7 +251,8 @@ Prompt Flow uses [Jinja2](https://pypi.org/project/Jinja2/) a templating languag
 1. Review the sections on safety, documentation (the product info), previous orders (from the customer lookup), and chat history.
 
 1. Switch back to the prompt flow visual editor.
-1. Select the **customer_prompt** and start the prompt flow execution.
+1. Press Shift+F5 or select **Run all** from the designer to run the complete Prompt Flow.
+
 
     <!-- ![](./media/customer_prompt_start.png) -->
 
