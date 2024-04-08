@@ -1,0 +1,760 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="prerequisites/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Production LLM apps with Azure AI, Prompt Flow, and VS Code</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#production-llm-apps-with-azure-ai-and-prompt-flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Production LLM apps with Azure AI, Prompt Flow, and VS Code" class="md-header__button md-logo" aria-label="Production LLM apps with Azure AI, Prompt Flow, and VS Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Production LLM apps with Azure AI, Prompt Flow, and VS Code
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Production LLM apps with Azure AI, Prompt Flow, and VS Code" class="md-nav__button md-logo" aria-label="Production LLM apps with Azure AI, Prompt Flow, and VS Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Production LLM apps with Azure AI, Prompt Flow, and VS Code
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slides
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rag-pattern-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rag pattern use cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to AI Studio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to AI Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-prompt-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Prompt Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-code-first-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code code first support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-flow-and-langchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Flow and LangChain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-llm-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      The LLM Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop - Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workshop - Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terms-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terms used
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="workshop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="local/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cheat_sheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demo cheat sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slides
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rag-pattern-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rag pattern use cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to AI Studio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to AI Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-prompt-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Prompt Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-code-first-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      VS Code code first support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-flow-and-langchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Flow and LangChain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-llm-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      The LLM Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop - Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workshop - Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terms-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terms used
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="production-llm-apps-with-azure-ai-and-prompt-flow">Production LLM apps with Azure AI and Prompt Flow</h1>
+<h2 id="slides">Slides</h2>
+<p>The companion PowerPoint slides with speaker notes are available for download</p>
+<ol>
+<li><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fgloveboxes%2Fprompt_flow_demo_docs%2Fmain%2Fdocs%2Fresources%2FBuild%2520your%2520RAG%2520Application%2520with%2520Prompt%2520flow%2520in%2520Azure%2520AI%2520Studio%2520-%2520dglover.pptx">English</a></li>
+<li><a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fgloveboxes%2Fprompt_flow_demo_docs%2Fmain%2Fdocs%2Fresources%2FBRK408JP_jp-BRK408AU_Build your RAG Application with Prompt flow in Azure AI Studio - dglover.pptx">Japanese</a></li>
+</ol>
+<h2 id="workshop-introduction">Workshop introduction</h2>
+<p>This workshop is a Prompt Flow/RAG 101. An introduction to the key concepts of building a Retrieval Augmented Generation (RAG) Large Language Model (LLM) application with Azure AI, Prompt Flow, and VS Code.</p>
+<p>There are two approaches to grounding your LLM apps with your data. You can either fine tune a model or use the RAG pattern.</p>
+<ol>
+<li>Fine tuning a model is complex and expensive, though there are some use cases where it is the best approach.</li>
+<li>RAG - Retrieval Augmented Generation. RAG is an industry approach to enriching a prompt with context, it is cheaper, less complex than fine tuning a model, easier to use existing IT investments. This workshop focuses on the RAG pattern.</li>
+</ol>
+<p>Grounding connects your Large Language Model (LLM) to your data. It is a critical step to ensure that the model's responses are relevant and aligned with current knowledge. Grounding also helps prevent the model from generating misleading or inaccurate information.</p>
+<h2 id="rag-pattern-use-cases">Rag pattern use cases</h2>
+<ol>
+<li><strong>Information Retrieval:</strong> Enhancing search engines to provide more accurate and context-aware results.</li>
+<li><strong>Conversational Agents:</strong> Improving chatbots or virtual assistants for more natural and contextually relevant interactions.</li>
+<li><strong>Content Generation:</strong> Creating high-quality articles, summaries, or creative writing with improved coherence.</li>
+<li><strong>Language Translation:</strong> Enhancing language translation services for more nuanced and context-aware translations.</li>
+<li><strong>Code Generation:</strong> Helping developers in generating code snippets or completing code with better contextual understanding.</li>
+<li><strong>Customer Support:</strong> Improving automated responses in customer service applications for more effective and empathetic communication.</li>
+<li><strong>Education:</strong> Facilitating personalized learning experiences by providing tailored explanations and resources based on user queries.</li>
+</ol>
+<h2 id="introduction-to-ai-studio">Introduction to AI Studio</h2>
+<p>AI Studio is a generative AI development hub that provides access to thousands of language models from OpenAI, Meta, Hugging Face, and more.</p>
+<ol>
+<li>It offers data grounding with retrieval augmented generation (RAG), prompt engineering and evaluation, built-in safety, and continuous monitoring for language models.</li>
+<li>With Azure AI Studio, you can quickly and securely ground models on your structured, unstructured, and real-time data.</li>
+<li>It is a powerful tool for professional software developers who want to create generative AI applications.</li>
+</ol>
+<p><a class="glightbox" href="media/build-rag-with-vs-code-ai-studio.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="media/build-rag-with-vs-code-ai-studio.png" /></a></p>
+<h3 id="what-is-prompt-flow">What is Prompt Flow</h3>
+<p>There are several approaches to building RAG applications, there are code centric approaches like LangChain, Semantic Kernel, and the OpenAI Assistant API and low code/no code approaches.</p>
+<p>Prompt Flow is a low code/no code approach to building RAG applications.</p>
+<p>Azure Prompt Flow simplifies prototyping, experimenting, and deploying AI applications powered by Large Language Models (LLMs). Prompt Flow is designed for developers, data scientists, researchers, or hobbyists who want to create LLM-based applications. With Azure Prompt Flow, you can create and compare multiple prompt variants, evaluate their performance, and debug your flows with ease.</p>
+<h3 id="vs-code-code-first-support">VS Code code first support</h3>
+<p>There is now a <a href="https://marketplace.visualstudio.com/items?itemName=prompt-flow.prompt-flow">Prompt Flow extension for VS Code</a> to build your LLM apps; this extension makes it easy to use version control systems like <code>git</code> as well as collaborating with others.</p>
+<!-- ### Why streamlining LLM Ops with Prompt Flow
+
+![](./media/why-streamline-llm-ops.png) -->
+
+<h3 id="prompt-flow-and-langchain">Prompt Flow and LangChain</h3>
+<p>A question you might be ask is what is the difference between Prompt Flow and LangChain. Prompt Flow is an end-to-end solution for prototyping, evaluation, deployment to production, and monitoring. LangChain is a library that you could use in your Prompt Flows.</p>
+<p><a class="glightbox" href="media/what_is_prompt_flow.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="media/what_is_prompt_flow.png" /></a></p>
+<h3 id="the-llm-lifecycle">The LLM Lifecycle</h3>
+<p>The LLM lifecycle is a complex and iterative process that involves ideation, development, deployment, and management. The process is unified by four overarching loops, with three primary loops: Ideation &amp; Exploration, Building &amp; Augmenting, and Operationalizing. Developers experiment with LLM prompts to understand how they engage with data, refine LLMs to align them with specific enterprise needs, and ensure LLMs are easily integrated into systems and operate safely. The Management loop focuses on governance, security, and compliance. Azure AI simplifies the complexities of the Enterprise LLM Lifecycle.</p>
+<p><a class="glightbox" href="media/llm_dev_in_real_world.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="media/llm_dev_in_real_world.png" /></a></p>
+<h2 id="workshop-overview">Workshop - Overview</h2>
+<p>The focus of the workshop is on pillar 1 (Ideation/exploring) and touches upon pillar 2 (Building/augmenting).</p>
+<p><a class="glightbox" href="media/overview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LLMOps lifecycle" src="media/overview.png" /></a></p>
+<h3 id="solution-overview">Solution overview</h3>
+<p>The solution is a chatbot that helps customers find the right product for their needs. The chatbot is built with Prompt Flow and uses a RAG pattern to ground the LLM prompt with product information and customer order history. A user can ask a question like <code>what tents can you recommend for beginners?</code> and the chatbot will respond with a product recommendation based on the customer's order history and the product catalog.</p>
+<p><a class="glightbox" href="media/rag-architecture.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="media/rag-architecture.png" /></a></p>
+<p>The Contoso outdoor eCommerce site calls the Prompt Flow endpoint deployed to Azure to provide product recommendations to customers.</p>
+<p><a class="glightbox" href="media/contoso-outdoors.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="media/contoso-outdoors.jpg" /></a></p>
+<blockquote>
+<p>You can deploy your own instance of the <a href="https://github.com/Azure-Samples/contoso-web">Contoso Outdoors eCommerce site</a>.</p>
+</blockquote>
+<h3 id="terms-used">Terms used</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Generative_pre-trained_transformer">Generative pre-trained transformer (GPT)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Large_language_model">Large Language Model (LLM)</a></li>
+<li><a href="https://learn.microsoft.com/azure/ai-services/openai/concepts/understand-embeddings">Embedding</a>: An embedding is a type of vector that is generated by a machine learning model and has semantic meaning. In this workshop, we'll be using the <strong>text-embedding-3-small</strong> model which generates a 1 x 1536 dimensioned vector.</li>
+<li><a href="https://learn.microsoft.com/azure/search/retrieval-augmented-generation-overview">Retrieval Augmented Generation (RAG)</a></li>
+<li><a href="https://learn.microsoft.com/azure/search/hybrid-search-overview">Hybrid Azure AI Search</a></li>
+<li><a href="https://learn.microsoft.com/azure/machine-learning/prompt-flow/overview-what-is-prompt-flow?view=azureml-api-2">Prompt Flow</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed acyclic graph (DAG)</a></li>
+<li>BYOD: Bring Your Own Data</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

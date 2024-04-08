@@ -1,0 +1,594 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Deploying your own Azure AI resources - Production LLM apps with Azure AI, Prompt Flow, and VS Code</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deploying-your-own-azure-ai-resources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Production LLM apps with Azure AI, Prompt Flow, and VS Code" class="md-header__button md-logo" aria-label="Production LLM apps with Azure AI, Prompt Flow, and VS Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Production LLM apps with Azure AI, Prompt Flow, and VS Code
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deploying your own Azure AI resources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Production LLM apps with Azure AI, Prompt Flow, and VS Code" class="md-nav__button md-logo" aria-label="Production LLM apps with Azure AI, Prompt Flow, and VS Code" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Production LLM apps with Azure AI, Prompt Flow, and VS Code
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workshop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Workshop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat_sheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demo cheat sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-provisioning-azure-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Provisioning Azure resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-set-up-the-workshop-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Set up the workshop environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-load-grounding-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Load grounding data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Load grounding data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-the-product-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load the product catalog
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-customer-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load the customer database
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-configure-the-prompt-flow-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Configure the Prompt Flow connections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-proceed-to-the-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Proceed to the workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="deploying-your-own-azure-ai-resources">Deploying your own Azure AI resources</h1>
+<p>You are following these instruction as you are provisioning your own Azure AI resources to run the workshop.</p>
+<p>You will perform the following steps:</p>
+<ol>
+<li>Provision the Azure resources required for the workshop.</li>
+<li>Set up the workshop environment with GitHub Codespaces.</li>
+<li>Load grounding data.</li>
+<li>Configure the Prompt Flow connections.</li>
+<li>Proceed to the workshop.</li>
+</ol>
+<h2 id="requirements">Requirements</h2>
+<p>You require an Azure Subscription. If you don't have an Azure subscriptions, you can create a <a href="https://azure.microsoft.com/en-us/free/free-account-faq">free subscription</a>.</p>
+<h2 id="step-1-provisioning-azure-resources">Step 1: Provisioning Azure resources</h2>
+<p>In this section you'll set up the Azure resources required for the workshop.</p>
+<ol>
+<li>Clone the <a href="https://github.com/azure-Samples/contoso-chat">contoso-chat</a> repo.</li>
+<li>From the VS Code Dev Container or the virtual Python environment, run the <code>./provision.sh</code> script.</li>
+<li>After the provisioning script completes, follow the instructions raised in this <a href="https://github.com/Azure-Samples/contoso-chat/issues/52">issue</a>.</li>
+</ol>
+<h2 id="step-2-set-up-the-workshop-environment">Step 2: Set up the workshop environment</h2>
+<p>To run the workshop with GitHub Codespaces, complete the following steps:</p>
+<ol>
+<li>
+<p>Fork the <a href="https://github.com/gloveboxes/contoso-chat-proxy">Contoso Chat Proxy</a> repository to your GitHub account.</p>
+<p><a class="glightbox" href="../media/repo_fork.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../media/repo_fork.png" /></a></p>
+</li>
+<li>
+<p>Open the forked repository in GitHub Codespaces. In the forked repository, select <code>Code</code>, then the <code>Codespaces</code> tab, and then select <code>Create codespace on main</code>. The GitHub Codespaces environment will be created for you. It will take approximately 5 minutes to create the environment.</p>
+<!-- <a class="glightbox" href="media/codespaces_open.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="media/codespaces_open.png" /></a> -->
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you have finished, be sure to stop the Codespace to avoid incurring unnecessary charges.</p>
+</div>
+</li>
+</ol>
+<h2 id="step-3-load-grounding-data">Step 3: Load grounding data</h2>
+<p>The solution uses two data sources to ground the LLM prompt. The first is an Azure AI Search index that contains product information. The second is a Cosmos DB database that holds customer information.</p>
+<h3 id="load-the-product-catalog">Load the product catalog</h3>
+<p>In this step you'll learn how to load product data into <a href="https://learn.microsoft.com/en-us/azure/search/">Azure AI Search</a>. The product database will be used to ground the LLM prompt with product information.</p>
+<p>Azure AI Search is a hybrid index service with support for keyword and semantic vector search. When data the is loaded into Azure AI Search, a keyword index is built for each product, and an embedding is generated for each product and is stored in a vector index.</p>
+<p>Architecturally, a search service sits between the external data stores that contain your un-indexed data, and your client app that sends query requests to a search index and handles the response.</p>
+<p><a class="glightbox" href="../media/azure-search.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../media/azure-search.svg" /></a></p>
+<p>Follow these steps:</p>
+<ol>
+<li>Ensure you have the <strong>contoso-chat</strong> repo open in VS Code.</li>
+<li>Load the Product catalog<ul>
+<li>Open the <code>data/product_info/products.csv</code> file and review the contents.</li>
+<li>Run the <code>data/product_info/create-azure-search.ipynb</code> Jupyter Notebook. The notebook will store product data and generated product description embeddings in Azure AI Search.</li>
+<li>Switch to Azure AI Search in the Azure Portal</li>
+<li>Review the AI Search resource and note that the semantic search feature is enabled.</li>
+<li>Show the indexes:<ul>
+<li>Select the <code>contoso-products</code> index. There are 20 documents indexed.</li>
+<li>Search the index - <code>what tents can you recommend?</code>. Azure AI Search will use the keyword index to return the product catalog results that most closely match the question.</li>
+<li>Review the results and note the vector from the embedding is returned with each result.</li>
+<li>
+<p>The Prompt Flow will use the index to ground the LLM prompt.</p>
+<p><a class="glightbox" href="../media/contoso-products.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../media/contoso-products.png" /></a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="load-the-customer-database">Load the customer database</h3>
+<p>In this step you'll learn how to load customer data into <a href="https://docs.microsoft.com/azure/cosmos-db/introduction">Cosmos DB</a>. The customer data will be used to ground the LLM prompt with customer order history.</p>
+<ol>
+<li>Run the <code>/data/customer_info/create-cosmos-db.ipynb</code> Jupyter Notebook to load the customer data into Cosmos DB.</li>
+<li>Navigate to Cosmos DB in Azure Portal and update one of the records with your name.<ul>
+<li>Select Data Explorer -&gt; contoso-outdoor -&gt; Customers -&gt; Items.</li>
+<li>
+<p>Pick and item to update, the select Update.</p>
+<p><a class="glightbox" href="../media/cosmos-explore-data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../media/cosmos-explore-data.png" /></a></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-4-configure-the-prompt-flow-connections">Step 4: Configure the Prompt Flow connections</h2>
+<ol>
+<li>Update the <code>.env.sample</code> file with the Azure AI Search and Cosmos DB connection strings.</li>
+<li>Configure the Prompt Flow connections:<ul>
+<li>Open the <code>connections</code> folder and open the <code>create-connections.ipynb</code> notebook.</li>
+<li>You will be prompted to install the Jupyter extension, select <strong>Install</strong>.</li>
+<li>Select <code>Run All</code> in the notebook to create the connections.</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-5-proceed-to-the-workshop">Step 5: Proceed to the workshop</h2>
+<ol>
+<li>From VS Code, create a folder called <code>workshop</code>.</li>
+<li>Proceed to the <a href="../workshop/">Workshop</a> section.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
